@@ -10,6 +10,17 @@
 class ORBITALSIMULATOR_API OrbitalVector
 {
 public:
+	double x;
+	double y;
+	double z;
+
+
 	OrbitalVector();
-	~OrbitalVector();
+	OrbitalVector(double x, double y, double z);
+
+		static OrbitalVector Add(const OrbitalVector& a, const OrbitalVector& b);
+		static OrbitalVector Subtract(const OrbitalVector& a, const OrbitalVector& b);
+		static OrbitalVector Scale(const OrbitalVector& v, double s);
+
+		double Magnitude() const;
 };

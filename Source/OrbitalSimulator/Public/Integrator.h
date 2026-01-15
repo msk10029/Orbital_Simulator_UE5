@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "OrbitalState.h"
 
 /**
  * 
@@ -11,5 +12,7 @@ class ORBITALSIMULATOR_API Integrator
 {
 public:
 	Integrator();
-	~Integrator();
+
+	static void StepEuler(OrbitalState& s, double dt);
+
 };

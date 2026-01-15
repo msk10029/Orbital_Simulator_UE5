@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "OrbitalState.h"
 #include "OrbitalBodyComponent.generated.h"
+
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -23,6 +25,16 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+
+	UPROPERTY(EditAnywhere, Category="Orbit|Initial")
+	FVector InitialPositionUE;
+
+	UPROPERTY(EditAnywhere, Category="Orbit|Initial")
+	FVector InitialVelocityUE;
+
+private:
+		OrbitalState State;
 
 		
 };
